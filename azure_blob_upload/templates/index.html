@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Blob Upload</title>
+</head>
+<body>
+    <h1>Uploaded Files</h1>
+    <a href="/upload">Upload a new file</a>
+    <ul>
+        {% for blob in blobs %}
+        <li>
+            {{ blob.name }} 
+            <a href="{{ url_for('download_file', blob_name=blob.name) }}">Download</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
